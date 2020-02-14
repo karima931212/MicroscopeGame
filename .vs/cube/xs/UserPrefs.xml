@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{436D71EE-05F1-018A-E897-C821B6ECB209}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SelectManager.cs">
+    <Files>
+      <File FileName="Assets/Script/CameraMovement.cs" Line="41" Column="30" />
+      <File FileName="../virtualtest/Assets/WastonAssistant.cs" />
+      <File FileName="Assets/Script/spawn.cs" />
+      <File FileName="Assets/SelectManager.cs" Line="9" Column="5" NotebookId="1" />
+      <File FileName="Assets/cubeInteractiom.cs" NotebookId="1" />
+      <File FileName="Assets/Script/ObjectScript.cs" Line="104" Column="1" NotebookId="1" />
+      <File FileName="../virtualtest/Assets/uOSC/Examples/Scripts/ServerTest.cs" NotebookId="1" />
+      <File FileName="../../../Downloads/SpawnObject.cs" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="cube" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True" />
+              <Node name="SelectManager.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0702b99d-4598-418f-9bc7-85586b3d6968" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
