@@ -27,6 +27,7 @@ public class ObjectScript : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0) && !isRotating)
 		{
+            
 			positionDiff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
 			positionDiff.y = 0;
 
@@ -101,17 +102,19 @@ public class ObjectScript : MonoBehaviour
 			transform.position = initialPosition;
 		}
 	}	
-
+    //function for rotate the object
 	private void rotateObject()
 	{
 		currentRotation = gameObject.transform.eulerAngles;
-		targetRotation.y = (currentRotation.y + (90 * rotationDirection));
+
+        
+		targetRotation.y = (currentRotation.y + (30 * rotationDirection));
 		StartCoroutine (objectRotationAnimation());
 	}
 
 	IEnumerator objectRotationAnimation()
 	{
-		// add rotation step to current rotation.
+	
 		currentRotation.y += (rotationStep * rotationDirection);
 		gameObject.transform.eulerAngles = currentRotation;
 		

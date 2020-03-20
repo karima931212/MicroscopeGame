@@ -63,21 +63,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\cubeInteractiom.cs" />
+    <Compile Include="Assets\Script\BoardManager.cs" />
     <Compile Include="Assets\Script\buildBlockMesh.cs" />
     <Compile Include="Assets\Script\CameraMovement.cs" />
     <Compile Include="Assets\Script\Laser.cs" />
     <Compile Include="Assets\Script\ObjectScript.cs" />
+    <Compile Include="Assets\Script\Pannel.cs" />
+    <Compile Include="Assets\Script\SelectManager.cs" />
     <Compile Include="Assets\Script\spawn.cs" />
-    <Compile Include="Assets\SelectManager.cs" />
+    <Compile Include="Assets\UI-Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\UI-Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\UI-Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\UI-Scripts\DragMe.cs" />
+    <Compile Include="Assets\UI-Scripts\DragPanel.cs" />
+    <Compile Include="Assets\UI-Scripts\DropMe.cs" />
+    <Compile Include="Assets\UI-Scripts\PanelManager.cs" />
+    <Compile Include="Assets\UI-Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\UI-Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\UI-Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\UI-Scripts\TiltWindow.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\UI-Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\UI-Material\UI-Default-No-Alpha.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
