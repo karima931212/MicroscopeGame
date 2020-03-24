@@ -179,8 +179,11 @@ public class BoardManager : MonoBehaviour
 
         Vector3 origin = Vector3.zero;
 
-        origin.x += TILE_SIZE * x;
-        origin.z += (TILE_SIZE * y) + TILE_OFFSET;
+        //origin.x += TILE_SIZE * x;
+        //origin.z += (TILE_SIZE * y) + TILE_OFFSET;
+        origin.x += (TILE_SIZE * x) + TILE_OFFSET;
+        origin.z += TILE_SIZE * y;
+
 
         return origin;
 
@@ -246,7 +249,7 @@ public class BoardManager : MonoBehaviour
     public void TwoByTwoCube()
     {
         isSpwaned = false;
-        scale = 2;
+        scale = 3;
         Selectedcube = cubePrefabs[7];
     }
     public void DefaultCube()
