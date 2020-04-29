@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObjectScript : MonoBehaviour 
+public class ObjectScript : MonoBehaviour
 {
-	public int rotationDirection = -1; 	// -1 for clockwise
+    [SerializeField] private Material hightlightedMaterial;
+    [SerializeField] private Material defaultMaterial;
+    public int rotationDirection = -1; 	// -1 for clockwise
 										//  1 for anti-clockwise
 	
-	public int rotationStep = 10;    	// should be less than 90
+	public int rotationStep = 30;    	// should be less than 90
 	
 	// All the objects with which collision will be checked
 	public GameObject[] objectsArray;
@@ -17,26 +19,34 @@ public class ObjectScript : MonoBehaviour
 	private Vector3 positionDiff, prevPosition, changedPosition, initialPosition;
 	private bool isRotating = false, swipping = false, moving = false, isCurrentObject = false;
 	private float distanceForRotation = 0.1f;
+    private GameObject parent;
 
-	void Start () 
+    void Start () 
 	{
-		initialPosition = transform.position;
-	}
+        parent = transform.parent.gameObject;
+        initialPosition = parent.transform.position;
+       
+        //initialPosition = transform.position;
+    }
 
 	void OnMouseOver()
 	{
-		if (Input.GetMouseButtonDown(0) && !isRotating)
+        var selectionRenderer = parent.GetComponent<Renderer>();
+        if (Input.GetMouseButtonDown(0) && !isRotating)
 		{
             
-			positionDiff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
-			positionDiff.y = 0;
+            selectionRenderer.material = hightlightedMaterial;
+            positionDiff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parent.transform.position;
+            //positionDiff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
+            positionDiff.y = 0;
 
 			prevPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			
 			swipping = isRotating = false;
 			isCurrentObject = moving = true;
 		}
-	}
+        
+    }
 
 	void Update()
 	{
@@ -59,8 +69,9 @@ public class ObjectScript : MonoBehaviour
 				changedPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition) - positionDiff;
 				changedPosition.y = initialPosition.y;
 				prevPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-				transform.position = changedPosition;
-			}
+                //transform.position = changedPosition;
+                parent.transform.position = changedPosition;
+            }
 		}
 	}
 
@@ -99,16 +110,17 @@ public class ObjectScript : MonoBehaviour
 	{
 		if (isCurrentObjectCollidingWithOtherObject())
 		{
-			transform.position = initialPosition;
-		}
+			//transform.position = initialPosition;
+            parent.transform.position = initialPosition;
+        }
 	}	
     //function for rotate the object
 	private void rotateObject()
 	{
-		currentRotation = gameObject.transform.eulerAngles;
+        //currentRotation = gameObject.transform.eulerAngles;
 
-        
-		targetRotation.y = (currentRotation.y + (30 * rotationDirection));
+        currentRotation = parent.transform.eulerAngles;
+        targetRotation.y = (currentRotation.y + (30 * rotationDirection));
 		StartCoroutine (objectRotationAnimation());
 	}
 
@@ -116,9 +128,9 @@ public class ObjectScript : MonoBehaviour
 	{
 	
 		currentRotation.y += (rotationStep * rotationDirection);
-		gameObject.transform.eulerAngles = currentRotation;
-		
-		yield return new WaitForSeconds (0);
+        //gameObject.transform.eulerAngles = currentRotation;
+        parent.transform.eulerAngles = currentRotation;
+        yield return new WaitForSeconds (0);
 		
 		if (((int)currentRotation.y >
 		     (int)targetRotation.y && rotationDirection < 0)  ||  // for clockwise
@@ -128,8 +140,9 @@ public class ObjectScript : MonoBehaviour
 		}
 		else
 		{
-			gameObject.transform.eulerAngles = targetRotation;
-			if (isCurrentObjectCollidingWithOtherObject())
+            //gameObject.transform.eulerAngles = targetRotation;
+            parent.transform.eulerAngles = targetRotation;
+            if (isCurrentObjectCollidingWithOtherObject())
 				StartCoroutine(rotateObjectAgain());
 			else
 				isRotating = isCurrentObject = false;
@@ -146,10 +159,12 @@ public class ObjectScript : MonoBehaviour
 	{
 		foreach (GameObject objectToCheck in objectsArray)
 		{
-			if (!objectToCheck.name.Equals (gameObject.name))
-			{
-				if (gameObject.GetComponent<Collider>().bounds.Intersects (objectToCheck.GetComponent<Collider>().bounds))
-					return true;
+            //if (!objectToCheck.name.Equals (gameObject.name))
+            if (!objectToCheck.name.Equals(parent.name))
+            {
+                //if (gameObject.GetComponent<Collider>().bounds.Intersects (objectToCheck.GetComponent<Collider>().bounds))
+                if (parent.GetComponent<Collider>().bounds.Intersects(objectToCheck.GetComponent<Collider>().bounds))
+                    return true;
 			}
 		}
 		return false;

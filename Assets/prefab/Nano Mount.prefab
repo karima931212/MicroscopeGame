@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 361845814202839828}
   - component: {fileID: 8673526504418347298}
   - component: {fileID: 3126068846063089115}
-  - component: {fileID: 8532420077146264022}
+  - component: {fileID: 4407347558147206105}
   m_Layer: 0
   m_Name: Nano Mount
   m_TagString: stillcube
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8532420077146264022
+--- !u!65 &4407347558147206105
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

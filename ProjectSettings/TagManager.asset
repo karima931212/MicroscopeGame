@@ -7,6 +7,8 @@ TagManager:
   - movecube
   - plane
   - stillcube
+  - laser
+  - laserblock
   layers:
   - Default
   - TransparentFX
