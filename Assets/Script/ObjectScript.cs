@@ -3,12 +3,12 @@ using System.Collections;
 
 public class ObjectScript : MonoBehaviour
 {
-    [SerializeField] private Material hightlightedMaterial;
-    [SerializeField] private Material defaultMaterial;
+    //[SerializeField] private Material hightlightedMaterial;
+    //[SerializeField] private Material defaultMaterial;
     public int rotationDirection = -1; 	// -1 for clockwise
 										//  1 for anti-clockwise
 	
-	public int rotationStep = 30;    	// should be less than 90
+	public int rotationStep = 45;    	// should be less than 90
 	
 	// All the objects with which collision will be checked
 	public GameObject[] objectsArray;
@@ -31,11 +31,11 @@ public class ObjectScript : MonoBehaviour
 
 	void OnMouseOver()
 	{
-        var selectionRenderer = parent.GetComponent<Renderer>();
+        //var selectionRenderer = parent.GetComponent<Renderer>();
         if (Input.GetMouseButtonDown(0) && !isRotating)
 		{
             
-            selectionRenderer.material = hightlightedMaterial;
+            //selectionRenderer.material = hightlightedMaterial;
             positionDiff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - parent.transform.position;
             //positionDiff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
             positionDiff.y = 0;
@@ -120,7 +120,7 @@ public class ObjectScript : MonoBehaviour
         //currentRotation = gameObject.transform.eulerAngles;
 
         currentRotation = parent.transform.eulerAngles;
-        targetRotation.y = (currentRotation.y + (30 * rotationDirection));
+        targetRotation.y = (currentRotation.y + (rotationStep * rotationDirection));
 		StartCoroutine (objectRotationAnimation());
 	}
 

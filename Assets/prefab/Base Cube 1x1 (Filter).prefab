@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367736056133740048}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 838.68726, y: 489.8901, z: -0.540545}
   m_LocalScale: {x: 2000, y: 2000, z: 2000}
   m_Children:
   - {fileID: 3944481963282209694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6483903450231975477
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 174122333613704187}
   - component: {fileID: 6344895487477476256}
   - component: {fileID: 1365840102179665896}
-  - component: {fileID: 8489280833229815176}
+  - component: {fileID: 1705124098683759846}
   m_Layer: 0
   m_Name: Cube
   m_TagString: laserblock
@@ -110,13 +110,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2301119084373287762}
-  m_LocalRotation: {x: 0, y: -0.5, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 0.00024899293, z: 0}
-  m_LocalScale: {x: -0.000016872002, y: 0.0005, z: 0.0005}
+  m_LocalRotation: {x: -0.27059805, y: 0.27059805, z: 0.6532815, w: 0.6532815}
+  m_LocalPosition: {x: -0.0000134, y: 0.000249, z: 0.0000125}
+  m_LocalScale: {x: 0.0006659686, y: 0.00025971502, z: 0.000003794956}
   m_Children: []
   m_Father: {fileID: 2639238482514318339}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 90}
 --- !u!33 &174122333613704187
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d385cb85212eb4866a4e8376cf96aa10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,7 +176,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.000061035156, y: -0.000030517578, z: 0.000000059604645}
---- !u!114 &8489280833229815176
+--- !u!114 &1705124098683759846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,9 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ca08fd7e7274457abef395bb0b5082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hightlightedMaterial: {fileID: 2100000, guid: 056a8229d0262454fa01ba45184e87e1,
-    type: 2}
-  defaultMaterial: {fileID: 0}
   rotationDirection: -1
   rotationStep: 30
   objectsArray: []

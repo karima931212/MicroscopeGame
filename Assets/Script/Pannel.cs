@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Pannel : MonoBehaviour
 {
     public GameObject FirstPanel;
+    public GameObject InstructionPanel;
     public GameObject CameraPanel;
     public GameObject LaserPanel;
     public GameObject LensePanel;
@@ -15,6 +16,7 @@ public class Pannel : MonoBehaviour
     void Start()
     {
         FirstPanel.gameObject.SetActive(false);
+        InstructionPanel.gameObject.SetActive(false);
         CameraPanel.gameObject.SetActive(false);
         LaserPanel.gameObject.SetActive(false);
         LensePanel.gameObject.SetActive(false);
@@ -28,11 +30,36 @@ public class Pannel : MonoBehaviour
 
         if (FirstPanel.activeSelf == false)
         {
+            
+            InstructionPanel.gameObject.SetActive(false);
             FirstPanel.gameObject.SetActive(true);
-
         }
         else {
+            
             FirstPanel.gameObject.SetActive(false);
+            CameraPanel.gameObject.SetActive(false);
+            LaserPanel.gameObject.SetActive(false);
+            LensePanel.gameObject.SetActive(false);
+            FilterPanel.gameObject.SetActive(false);
+            MirrorPanel.gameObject.SetActive(false);
+            ObjectivePanel.gameObject.SetActive(false);
+
+        }
+
+    }
+    //open and close the first panel
+    public void InteractInstructionPanel()
+    {
+
+        if (InstructionPanel.activeSelf == false)
+        {
+            
+            FirstPanel.gameObject.SetActive(false);
+            InstructionPanel.gameObject.SetActive(true);
+        }
+        else
+        {
+            InstructionPanel.gameObject.SetActive(false);
             CameraPanel.gameObject.SetActive(false);
             LaserPanel.gameObject.SetActive(false);
             LensePanel.gameObject.SetActive(false);

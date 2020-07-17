@@ -9,6 +9,8 @@ TagManager:
   - stillcube
   - laser
   - laserblock
+  - camerablock
+  - reflectblock
   layers:
   - Default
   - TransparentFX

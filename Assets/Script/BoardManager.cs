@@ -83,12 +83,17 @@ public class BoardManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 25f)) {
 
-                if (hit.transform.tag == "movecube" || hit.transform.tag == "stillcube") {
+                if (hit.transform.tag == "laserblock" || hit.transform.tag == "camerablock" || hit.transform.tag == "reflectblock") {
 
-                    Debug.DrawRay(ray.origin, hit.point);
+                
 
-                    Destroy(GameObject.Find(hit.collider.gameObject.name));
+                    Destroy(hit.transform.parent.gameObject);
 
+
+                }
+                if (hit.transform.tag == "stillcube" || hit.transform.tag == "movecube") {
+
+                    Destroy(hit.transform.gameObject);
 
                 }
             }
@@ -105,15 +110,16 @@ public class BoardManager : MonoBehaviour
         if (!Camera.main)
             return;
 
-        
+
         RaycastHit hit;
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 25.0f, LayerMask.GetMask("ChessPlane")))
-        {
+        //if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 25.0f, LayerMask.GetMask("ChessPlane")))
+        //{
 
-
-                selectionX = (int)hit.point.x;
-                selectionY = (int)hit.point.z;
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000.0f))
+        { 
+            selectionX = (int)hit.point.x;
+            selectionY = (int)hit.point.z;
             
           
         }

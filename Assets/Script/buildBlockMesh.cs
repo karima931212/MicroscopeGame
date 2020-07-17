@@ -52,7 +52,7 @@ public class buildBlockMesh : MonoBehaviour
 
                 GameObject block = (GameObject)Instantiate(newBlock, blockPos, Quaternion.identity);
                 block.transform.parent = this.transform;
-                Combine(block);
+                //Combine(block);
             
             }
 

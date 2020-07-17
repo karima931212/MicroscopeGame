@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 3305644313001866270}
   - component: {fileID: 5817251323737476648}
   - component: {fileID: 254328211993850577}
-  - component: {fileID: 9220713522254881048}
-  - component: {fileID: 237690448994164677}
+  - component: {fileID: 4096878893190730}
   m_Layer: 0
   m_Name: Base Cube 1x1 (Laser)
   m_TagString: movecube
@@ -56,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9220713522254881048
+--- !u!65 &4096878893190730
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,18 +96,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.000498, y: 0.00049999997, z: 0.000498}
   m_Center: {x: 0, y: 0.00024899998, z: 0}
---- !u!114 &237690448994164677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998287779797321229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ca08fd7e7274457abef395bb0b5082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationDirection: -1
-  rotationStep: 10
-  objectsArray: []

@@ -8,11 +8,8 @@ public class SelectManager : MonoBehaviour
     [SerializeField] private Material defaultMaterial;
     
     private Transform _selection;
-
-    private void OnMouseDown()
-    {
-        
-    }
+    
+   
     // Update is called once per frame
     private void Update()
     {
@@ -26,8 +23,8 @@ public class SelectManager : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit)) {
-            if (hit.transform.tag == "movecube") {
-                var selection = hit.transform;
+            if (hit.transform.tag == "laserblock" || hit.transform.tag == "camerablock" || hit.transform.tag == "reflectblock") {
+                var selection = hit.transform.parent;
                 var selectionRenderer = selection.GetComponent<Renderer>();
                 defaultMaterial = selectionRenderer.material;
                 if (selectionRenderer != null)

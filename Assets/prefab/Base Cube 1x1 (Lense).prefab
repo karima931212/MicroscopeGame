@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5425014374219228486}
   - component: {fileID: 265665763704266060}
   - component: {fileID: 5004352334499219858}
+  - component: {fileID: 7525407988170329174}
   m_Layer: 0
   m_Name: Cube
   m_TagString: laserblock
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55887685211717229}
-  m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.000249, z: -0.000239}
+  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: -0.000019, y: 0.000273, z: -0.000006}
   m_LocalScale: {x: 0.0005, y: 0.0005, z: -0.0000086105}
   m_Children: []
   m_Father: {fileID: 774978322986492538}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!33 &5425014374219228486
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -48,17 +49,18 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55887685211717229}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d385cb85212eb4866a4e8376cf96aa10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,6 +94,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.000030517578, z: 0}
+--- !u!114 &7525407988170329174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55887685211717229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e266e339d5fdf44ca89ca0d8d7eac492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
+  RotateY: 1
+  RotateX: 1
 --- !u!1 &4366837376826871913
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,8 +120,6 @@ GameObject:
   - component: {fileID: 774978322986492538}
   - component: {fileID: 8618271286553204812}
   - component: {fileID: 2641019755581416629}
-  - component: {fileID: 6734450589783425329}
-  - component: {fileID: 1733469092286989780}
   m_Layer: 0
   m_Name: Base Cube 1x1 (Lense)
   m_TagString: movecube
@@ -149,6 +164,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -175,31 +191,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6734450589783425329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4366837376826871913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ca08fd7e7274457abef395bb0b5082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationDirection: -1
-  rotationStep: 10
-  objectsArray: []
---- !u!65 &1733469092286989780
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4366837376826871913}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.000498, y: 0.000498, z: 0.000498}
-  m_Center: {x: 0, y: 0.000249, z: 0}
